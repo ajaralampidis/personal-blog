@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const CustomLink = (props) => {
+const CustomLink = (props: any) => {
   const href = props.href;
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
@@ -16,7 +16,7 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-const BlogImg = (props) => {
+const BlogImg = (props: any) => {
   return (
     <div className="my-3">
       <Image
@@ -24,7 +24,6 @@ const BlogImg = (props) => {
         alt={props.alt}
         layout="responsive"
         {...props}
-        className="rounded-xl"
       />
     </div>
   );

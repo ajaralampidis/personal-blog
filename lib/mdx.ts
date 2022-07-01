@@ -13,7 +13,8 @@ import remarkMath from 'remark-math'
 
 const basePath = process.cwd();
 
-const logger = (TOC) => {
+const logger = (TOC: any) => {
+  console.log(TOC)
   return TOC
 }
 
@@ -21,7 +22,7 @@ export async function getFiles() {
   return readdirSync(join(basePath, "_posts"));
 }
 
-export async function getFileBySlug(slug) {
+export async function getFileBySlug(slug: any) {
 
   // we will pass in a slug of the page we want like /blogs/blog-1
   // example and we will get the parsed content for that particular
@@ -56,6 +57,7 @@ export async function getFileBySlug(slug) {
         [
           rehypeAutolinkHeadings,
           {
+            behavior: 'befire',
             properties: {
               className: ["anchor"],
             },
@@ -83,7 +85,7 @@ export async function getFileBySlug(slug) {
 export async function getAllFilesFrontMatter() {
   const files = readdirSync(join(basePath, "_posts"));
 
-  return files.reduce((allPosts, postSlug) => {
+  return files.reduce((allPosts: any, postSlug: any) => {
 
     // returns the parsed data for all the files within the posts directory
     const source = readFileSync(join(basePath, "_posts", postSlug), "utf8");

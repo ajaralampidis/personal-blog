@@ -4,7 +4,7 @@ import { getFiles, getFileBySlug } from "../../lib/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import MDXComponent from "../../components/MDXComponents";
 
-const RandomNav = props => {
+const RandomNav = (props: any) => {
   return (
     <div className="RANDOM1" >
       <div className="RANDOM2" {...props} />
@@ -14,7 +14,7 @@ const RandomNav = props => {
 }
 
 
-export default function BlogSlug({ code, frontMatter }) {
+export default function BlogSlug({ code, frontMatter }: any) {
 const Component = useMemo(() => getMDXComponent(code), [code]);
 
 return (
@@ -50,7 +50,7 @@ return (
 );
 }
 
-// we will generate all the blogs at build time.
+// we will generate all the blog posts at build time.
 
 export async function getStaticPaths() {
   const posts = await getFiles();
@@ -65,7 +65,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const post = await getFileBySlug(params.slug);
   
   return { props: { ...post } };

@@ -8,9 +8,6 @@
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "^3.0.2",
-    "classnames": "2.3.1",
-    "date-fns": "2.21.3",
-    "esbuild": "^0.14.30",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^9.0.0",
     "next": "latest",

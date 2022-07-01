@@ -12,7 +12,7 @@ const Index = () => {
       </div>
       <br />
       <br />
-      <div id="map" class="map"></div>
+      <div id="map" className="map"></div>
     </>
   )
 }
